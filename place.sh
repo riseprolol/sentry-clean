@@ -9,4 +9,3 @@ if (( availSpace < reqSpace )); then
   docker exec -i --user=root sentry-self-hosted-postgres-1 psql -U postgres -c "TRUNCATE public.nodestore_node;"
   exit 1
 fi
-roo
