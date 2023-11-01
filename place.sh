@@ -8,4 +8,6 @@ if (( availSpace < reqSpace )); then
   echo "Недостаточно места. Сношу индексы..." >&2
   docker exec -i --user=root sentry-self-hosted-postgres-1 psql -U postgres -c "TRUNCATE public.nodestore_node;"
   exit 1
+else
+  echo "Места достаточно, ничего не трогаю"
 fi
